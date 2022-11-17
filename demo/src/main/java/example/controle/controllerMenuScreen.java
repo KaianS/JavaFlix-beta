@@ -62,7 +62,7 @@ public class controllerMenuScreen implements Initializable {
     }
     
     public void carregarObListTitulo(){
-        String titulo;
+        /*String titulo;
         String undefined;
         String tipo = "Filme";
         String ano;
@@ -89,11 +89,8 @@ public class controllerMenuScreen implements Initializable {
             cadastrarFilme(fullMovie);
             //System.out.println(imprimir());
              
-        }
+        }*/
         listarFilmes();
-
-        //listViewTitulos.getItems().addAll(new Titulo("Batman - Cavaleiro das Trevas", "5", "Filme", 2045,"DAPDIAJDOIJA", new ImageView("https://image.tmdb.org/t/p/w200/oR4Hzc17SqjfPzKbR8Qcy5QxZJF.jpg")), 
-        //new Titulo("Batman - Cavaleiro das Trevas", "5", "Filme", 2045,"DAPDIAJDOIJA", new ImageView("https://image.tmdb.org/t/p/w200/oR4Hzc17SqjfPzKbR8Qcy5QxZJF.jpg")));
 
         listViewTitulos.setCellFactory(new Callback<ListView<Titulo>,ListCell<Titulo>>() {
 
