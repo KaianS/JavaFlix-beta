@@ -7,7 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class TesteTelas extends Application {
+public class StartJavaFlix extends Application {
     private static Stage stage;
     private static Scene startScene;
     private static Scene menuScene;
@@ -23,7 +23,7 @@ public class TesteTelas extends Application {
 
         Parent fxmlMenu = FXMLLoader.load(getClass().getResource("MenuScreenFXML.fxml"));
         menuScene = new Scene(fxmlMenu);
-        menuScene.getStylesheets().add("styles.css");
+        menuScene.getStylesheets().add("style.css");
 
         Parent fxmlSpecific = FXMLLoader.load(getClass().getResource("specificScreenFXML.fxml"));
         specificScene = new Scene(fxmlSpecific);

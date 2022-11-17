@@ -1,9 +1,9 @@
 package example.controle;
 
+import example.visao.StartJavaFlix;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import example.visao.TesteTelas;
 
 public class controllerSpecificScreen {
 
@@ -12,7 +12,7 @@ public class controllerSpecificScreen {
 
     @FXML
     void clickReturnButton(MouseEvent event) {
-    TesteTelas.changeScene("menu");
+    StartJavaFlix.changeScene("menu");
     }
 
 }

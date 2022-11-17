@@ -2,6 +2,7 @@ package example.data;
 
 import java.io.*;
 import java.util.*;
+
 import example.modelo.*;
 
 public class TituloDados{

@@ -8,28 +8,17 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
+import example.modelo.Titulo;
+import example.visao.StartJavaFlix;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tooltip;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
-import example.modelo.Titulo;
-import example.visao.TesteTelas;
-import info.movito.themoviedbapi.TmdbApi;
-import info.movito.themoviedbapi.TmdbMovies;
-import info.movito.themoviedbapi.TmdbMovies.MovieMethod;
-import info.movito.themoviedbapi.model.Artwork;
-import info.movito.themoviedbapi.model.ArtworkType;
-import info.movito.themoviedbapi.model.MovieDb;
-import info.movito.themoviedbapi.model.MovieImages;
-import info.movito.themoviedbapi.model.core.MovieResultsPage;
 
 public class controllerMenuScreen implements Initializable {
 
@@ -62,34 +51,6 @@ public class controllerMenuScreen implements Initializable {
     }
     
     public void carregarObListTitulo(){
-        /*String titulo;
-        String undefined;
-        String tipo = "Filme";
-        String ano;
-        String descricao;
-        String imagefullURL;
-        TmdbMovies movies = new TmdbApi("79f8ad578459c24567ff304e079010d9").getMovies();
-        //String teste = "https://image.tmdb.org/t/p/w200/oR4Hzc17SqjfPzKbR8Qcy5QxZJF.jpg";
-        String baseURL = "https://image.tmdb.org/t/p/w200";
-        for(int i = 0; i < 20; i++){
-          
-            MovieResultsPage movie = movies.getPopularMovies("pt-br", 2);
-            List<MovieDb> results = movie.getResults();
-            MovieDb actualMovie = results.get(i);
-            titulo = actualMovie.getTitle(); //TITULO
-            undefined = titulo; // nao sei
-            ano = actualMovie.getReleaseDate(); // ano do filme
-            descricao = actualMovie.getOverview(); // Descrição
-            int movieID = results.get(i).getId();
-            MovieDb getImage = movies.getMovie(movieID, null, MovieMethod.images);
-            Artwork actual = getImage.getImages(ArtworkType.POSTER).get(0);
-            imagefullURL = baseURL.concat(actual.getFilePath());
-            Titulo fullMovie = new Titulo(titulo, undefined, tipo, ano, descricao, imagefullURL);
-            //listViewTitulos.getItems().add(fullMovie);
-            cadastrarFilme(fullMovie);
-            //System.out.println(imprimir());
-             
-        }*/
         listarFilmes();
 
         listViewTitulos.setCellFactory(new Callback<ListView<Titulo>,ListCell<Titulo>>() {
@@ -175,7 +136,7 @@ public class controllerMenuScreen implements Initializable {
     void clickListViewTitulos(MouseEvent event) {
         Titulo titulo = listViewTitulos.getSelectionModel().getSelectedItem();
         System.out.println("Título Selecionado pelo mouse" + titulo);
-        TesteTelas.changeScene("specific");
+        StartJavaFlix.changeScene("specific");
     }
 
 }

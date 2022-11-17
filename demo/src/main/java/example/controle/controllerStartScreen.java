@@ -1,9 +1,9 @@
 package example.controle;
 
+import example.visao.StartJavaFlix;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
-import example.visao.TesteTelas;
 
 public class controllerStartScreen {
 
@@ -15,6 +15,6 @@ public class controllerStartScreen {
 
     @FXML
     void clickButtonStart(ActionEvent event) {
-        TesteTelas.changeScene("menu");
+        StartJavaFlix.changeScene("menu");
     }
 }

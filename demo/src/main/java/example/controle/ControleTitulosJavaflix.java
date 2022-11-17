@@ -1,8 +1,9 @@
 package example.controle;
 
+import java.util.*;
+
 import example.data.TituloDados;
 import example.modelo.*;
-import java.util.*;
 
 public class ControleTitulosJavaflix {
     private TituloDados titulosJavaflix = new TituloDados();
