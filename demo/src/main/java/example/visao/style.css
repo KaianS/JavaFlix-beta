@@ -2,6 +2,8 @@
     -fx-control-inner-background: rgb(25, 27, 31);
     -fx-font: 15pt "Arial";
     -fx-font-weight: bold;
+    -fx-border-color: rgb(0, 150, 201);
+    -fx-border-top-width: 5px;
 }
 #botaoIniciar{
     -fx-position: relative;

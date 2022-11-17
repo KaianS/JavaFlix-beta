@@ -1,8 +1,5 @@
 package example.modelo;
 
-import javafx.scene.image.ImageView;
-import java.io.*;
-
 public class Filme extends Titulo {
     private double duracaoEmSegs;
 

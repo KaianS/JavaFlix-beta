@@ -17,11 +17,11 @@
             <Image url="@Assets/ButtonFavs.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="HouseButton" fitHeight="15.0" fitWidth="58.0" layoutX="88.0" layoutY="173.0" onMouseClicked="#clickHouseButton" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="HouseButton" fitHeight="15.0" fitWidth="58.0" layoutX="88.0" layoutY="171.0" onMouseClicked="#clickHouseButton" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Assets/ButtonInicio.png" />
          </image>
       </ImageView>
-      <ListView fx:id="listViewTitulos" layoutX="225.0" layoutY="124.0" onMouseClicked="#clickListViewTitulos" prefHeight="484.0" prefWidth="837.0" style="-fx-border-color: red;" stylesheets="@style.css" />
+      <ListView fx:id="listViewTitulos" layoutX="227.0" layoutY="124.0" onMouseClicked="#clickListViewTitulos" prefHeight="500.0" prefWidth="835.0" stylesheets="@style.css" />
    </children>
 </AnchorPane>
