@@ -1,5 +1,4 @@
 package example.controle;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -121,8 +120,8 @@ public class controllerMenuScreen implements Initializable {
             e.printStackTrace();
         }
         return titulos;
-
     }
+
     public String imprimir() {
 		String res = "";
 		ArrayList<Titulo> disc = listarFilmes();
@@ -133,10 +132,13 @@ public class controllerMenuScreen implements Initializable {
 	}
 
     @FXML
-    void clickListViewTitulos(MouseEvent event) {
+    void clickListViewTitulos() {
         Titulo titulo = listViewTitulos.getSelectionModel().getSelectedItem();
         System.out.println("Título Selecionado pelo mouse" + titulo);
         StartJavaFlix.changeScene("specific");
     }
+
+
+
 
 }

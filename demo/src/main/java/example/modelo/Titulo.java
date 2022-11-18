@@ -48,9 +48,9 @@ public class Titulo implements Serializable {
     }
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return super.toString();
     }
+    
     //setters
     public void setNome(String nome) {
         this.nome = nome;
