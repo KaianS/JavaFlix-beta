@@ -6,21 +6,15 @@
     -fx-border-top-width: 5px;
 }
 #botaoIniciar{
-    -fx-position: relative;
-    -fx-background-color: black;
-    -fx-border-radius: 4em;
-    -fx-font-size: 16px;
-    -fx-color: rgb(249, 3, 3);
-    -fx-padding: 0.8em 1.8em;
-    -fx-user-select:none;
-    -fx-text-align: center;
-    -fx-text-decoration: none;
-    -fx-transition-duration: 0.4s;
-    -fx-webkit-transition-duration: 0.4s;
+    -fx-background-color: rgb(25, 27, 31);
+    -fx-font: 14pt "Arial";
+    -fx-font-weight: bold;
+    -fx-border-radius: 20%;
+    -fx-border-width: 2px;
+    -fx-border-color: rgba(0,151,204,255);
 }
 #botaoIniciar:hover{
-    -fx-transition-duration: 0.1s;
-    -fx-background-color: #3A3A3A;
+    -fx-background-color: rgba(0,151,204,255);
 }
 #botaoIniciar:after{
     -fx-top: 1px;
