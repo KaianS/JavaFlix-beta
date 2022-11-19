@@ -46,7 +46,6 @@ public class controllerMenuScreen implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         carregarObListTitulo();
-        
     }
     
     public void carregarObListTitulo(){
@@ -132,10 +131,12 @@ public class controllerMenuScreen implements Initializable {
 	}
 
     @FXML
-    void clickListViewTitulos() {
+    Titulo clickListViewTitulos() {
         Titulo titulo = listViewTitulos.getSelectionModel().getSelectedItem();
         System.out.println("Título Selecionado pelo mouse" + titulo);
-        StartJavaFlix.changeScene("specific");
+        StartJavaFlix.changeScene("specific", titulo);
+        return titulo;
+
     }
 
 
