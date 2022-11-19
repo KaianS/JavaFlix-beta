@@ -8,6 +8,7 @@ import example.visao.StartJavaFlix;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
@@ -35,8 +36,11 @@ public class controllerSpecificScreen implements Initializable{
         StartJavaFlix.addOnChangeScreenListener(new StartJavaFlix.onChangeScreen() {
             @Override
             public void onScreenChanged(String newScreen, Titulo userData) {
-                System.out.println("Nova tela " + newScreen + " Dados " + userData);
-                labelTitle.setText(userData.getNome());
+                if (newScreen.equals("specific")){
+                    System.out.println("Nova tela " + newScreen + " Dados " + userData);
+                    labelTitle.setText(userData.getNome());
+                    imagemFilme.setImage(new Image(userData.getImagem()));
+                }
             }
         });
 
