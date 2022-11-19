@@ -24,7 +24,16 @@ public class controllerSpecificScreen implements Initializable{
     private Label labelTitle;
 
     @FXML
-    private controllerMenuScreen controller;
+    private Label labelSinopse;
+
+    @FXML
+    private Label labelAva;
+
+    @FXML
+    private Label labelLanc;
+
+    @FXML
+    private Label labelNsei;
 
     @FXML
     void clickReturnButton(MouseEvent event) {
@@ -40,6 +49,16 @@ public class controllerSpecificScreen implements Initializable{
                     System.out.println("Nova tela " + newScreen + " Dados " + userData);
                     labelTitle.setText(userData.getNome());
                     imagemFilme.setImage(new Image(userData.getImagem()));
+                    if (userData.getSinopse().isEmpty()){
+                        labelSinopse.setText("Não foi Possível Encontrar Sinopse para este filme");   
+                    }
+                    else{
+                        labelSinopse.setText(userData.getSinopse());
+                    }
+                    labelAva.setText(userData.getNota());
+                    labelLanc.setText(userData.getLancamento());
+                    labelNsei.setText(userData.getTipo());
+
                 }
             }
         });
