@@ -24,13 +24,28 @@
          </image>
       </ImageView>
       <ImageView fx:id="imagemFilme" fitHeight="445.0" fitWidth="296.0" layoutX="252.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="labelTitle" layoutX="609.0" layoutY="115.0" prefHeight="33.0" prefWidth="429.0" text="Label" textFill="WHITE" />
+      <Label fx:id="labelTitle" layoutX="609.0" layoutY="115.0" prefHeight="33.0" prefWidth="429.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Label>
       <Label fx:id="labelSinopse" alignment="TOP_LEFT" layoutX="609.0" layoutY="188.0" prefHeight="124.0" prefWidth="429.0" text="Label" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Arial" size="14.0" />
          </font></Label>
-      <Label fx:id="labelLanc" layoutX="609.0" layoutY="360.0" text="Label" textFill="WHITE" />
-      <Label fx:id="labelNsei" layoutX="609.0" layoutY="440.0" text="Label" textFill="WHITE" />
-      <Label fx:id="labelAva" layoutX="609.0" layoutY="514.0" text="Label" textFill="WHITE" />
+      <Label fx:id="labelLanc" layoutX="609.0" layoutY="360.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelNsei" layoutX="609.0" layoutY="436.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelAva" layoutX="609.0" layoutY="514.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
