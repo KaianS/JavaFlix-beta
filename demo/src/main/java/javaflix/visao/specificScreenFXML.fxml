@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaflix.controle.controllerSpecificScreen">
+   <children>
+      <ImageView fitHeight="608.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Assets/TELA-03.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="returnButton" fitHeight="15.0" fitWidth="58.0" layoutX="88.0" layoutY="171.0" onMouseClicked="#clickReturnButton" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Assets/ButtonInicio.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="15.0" fitWidth="200.0" layoutX="88.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Assets/ButtonFavs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imagemFilme" fitHeight="445.0" fitWidth="296.0" layoutX="252.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="labelTitle" layoutX="609.0" layoutY="115.0" prefHeight="33.0" prefWidth="429.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Label>
+      <Label fx:id="labelSinopse" alignment="TOP_LEFT" layoutX="609.0" layoutY="188.0" prefHeight="124.0" prefWidth="429.0" text="Label" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Label>
+      <Label fx:id="labelLanc" layoutX="609.0" layoutY="360.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelNsei" layoutX="609.0" layoutY="436.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelAva" layoutX="609.0" layoutY="514.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
