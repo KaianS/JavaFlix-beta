@@ -10,38 +10,41 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javaflix.modelo.Titulo;
 import javaflix.visao.StartJavaFlix;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 
 public class controllerMenuScreen implements Initializable {
-
-    @FXML
-    private ImageView HouseButton;
-
-    @FXML
-    private ImageView favsButton;
 
     @FXML
     private ImageView menuBackground;
 
     @FXML
     private ListView<Titulo> listViewTitulos;
-
-    @FXML
-    void clickFavsButton(MouseEvent event) {
-
-    }
     
     @FXML
-    void clickHouseButton(MouseEvent event) {
-        
+    private Button buttomFavsSpecific;
+
+    @FXML
+    private Button buttomInicioSpecific;
+
+    
+    @FXML
+    void clickButtomFavsSpecific(ActionEvent event) {
+
     }
+
+    @FXML
+    void clickButtomInicioSpecific(ActionEvent event) {
+
+    }
+
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -139,6 +142,7 @@ public class controllerMenuScreen implements Initializable {
         return titulo;
 
     }
+    
 
 
 

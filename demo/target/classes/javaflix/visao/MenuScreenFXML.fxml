@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaflix.controle.controllerMenuScreen">
    <children>
@@ -12,16 +14,16 @@
             <Image url="@Assets/Tela02.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="favsButton" fitHeight="15.0" fitWidth="99.0" layoutX="88.0" layoutY="202.0" onMouseClicked="#clickFavsButton" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Assets/ButtonFavs.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="HouseButton" fitHeight="15.0" fitWidth="58.0" layoutX="88.0" layoutY="171.0" onMouseClicked="#clickHouseButton" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Assets/ButtonInicio.png" />
-         </image>
-      </ImageView>
       <ListView fx:id="listViewTitulos" layoutX="227.0" layoutY="124.0" onMouseClicked="#clickListViewTitulos" prefHeight="500.0" prefWidth="835.0" stylesheets="@style.css" />
+      <Button fx:id="buttomInicioSpecific" layoutX="90.0" layoutY="165.0" mnemonicParsing="false" onAction="#clickButtomInicioSpecific" prefHeight="2.0" prefWidth="87.0" stylesheets="@style.css" text="Início" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttomFavsSpecific" layoutX="90.0" layoutY="202.0" mnemonicParsing="false" onAction="#clickButtomFavsSpecific" prefHeight="2.0" prefWidth="87.0" stylesheets="@style.css" text="Favoritos" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

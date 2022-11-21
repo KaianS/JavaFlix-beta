@@ -5,8 +5,10 @@ import java.util.ResourceBundle;
 
 import javaflix.modelo.Titulo;
 import javaflix.visao.StartJavaFlix;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -14,31 +16,42 @@ import javafx.scene.input.MouseEvent;
 
 public class controllerSpecificScreen implements Initializable{
 
+    
     @FXML
-    private ImageView returnButton;
+    private Button buttomInicioSpecific;
 
     @FXML
     private ImageView imagemFilme;
 
     @FXML
-    private Label labelTitle;
+    private Label labelGen;
+
+    @FXML
+    private Label labelLancamento;
+
+    @FXML
+    private Label labelNota;
 
     @FXML
     private Label labelSinopse;
 
     @FXML
-    private Label labelAva;
+    private Label labelTitle;
+    
+    @FXML
+    private Button buttomFavsSpecific;
 
     @FXML
-    private Label labelLanc;
+    void clickButtomFavsSpecific(ActionEvent event) {
 
-    @FXML
-    private Label labelNsei;
-
-    @FXML
-    void clickReturnButton(MouseEvent event) {
-    StartJavaFlix.changeScene("menu");
     }
+
+    @FXML
+    void clickButtomInicioSpecific(ActionEvent event) {
+        StartJavaFlix.changeScene("menu");
+    }
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -55,16 +68,16 @@ public class controllerSpecificScreen implements Initializable{
                     else{
                         labelSinopse.setText(userData.getSinopse());
                     }
-                    String notaConvertida = String.valueOf(userData.getNota());
+                    String notaConvertida = String.format("%.1f", userData.getNota());
                     String genero = "";
                     for(int i = 0; i < userData.getGenero().size(); i++){
                         if(userData.getGenero().get(i) != null){
                             genero += userData.getGenero().get(i) + ", ";
                         }
                     }
-                    labelAva.setText(notaConvertida);
-                    labelLanc.setText(userData.getLancamento());
-                    labelNsei.setText(genero);
+                    labelNota.setText(notaConvertida);
+                    labelGen.setText(genero);
+                    labelLancamento.setText(userData.getLancamento());
 
                 }
             }
