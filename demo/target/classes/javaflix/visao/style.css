@@ -1,4 +1,4 @@
-#listViewTitulos{
+#listViewTitulos {
     -fx-control-inner-background: rgb(25, 27, 31);
     -fx-font: 15pt "Arial";
     -fx-font-weight: bold;
@@ -6,84 +6,43 @@
     -fx-border-top-width: 5px;
 }
 
-
-
-#botaoIniciar{
+#botaoIniciar {
     -fx-background-color: rgb(25, 27, 31);
     -fx-font: 14pt "Arial";
     -fx-font-weight: bold;
     -fx-border-radius: 20%;
     -fx-border-width: 2px;
-    -fx-border-color: rgba(0,151,204,255);
-}
-#botaoIniciar:hover{
-    -fx-background-color: rgba(0,151,204,255);
-}
-#botaoIniciar:after{
-    -fx-top: 1px;
-}
-#botaoIniciar:active:after {
-    -fx-box-shadow: 0 0 0 0 rgb(247, 247, 247);
-    -fx-position: absolute;
-    -fx-border-radius: 4em;
-    -fx-left: 0;
-    -fx-top:0;
-    -fx-opacity: 1;
-    -fx-transition: 0s;
+    -fx-border-color: rgba(0, 151, 204, 255);
 }
 
+#botaoIniciar:hover {
+    -fx-background-color: rgba(0, 151, 204, 255);
+}
 
-
-
-#buttomInicioSpecific{
+#buttomInicioSpecific {
     -fx-background-color: rgb(25, 27, 31);
     -fx-font: 9pt "Arial";
     -fx-font-weight: bold;
-    -fx-border-radius: 20%;
-    -fx-border-width: 2px;
-    -fx-border-color: rgba(0,151,204,255);
-    -fx-letter-spacing:20px
-}
-#buttomInicioSpecific:hover{
-    -fx-background-color: rgba(0,151,204,255);
-}
-#buttomInicioSpecific:after{
-    -fx-top: 1px;
-}
-#buttomInicioSpecific:active:after {
-    -fx-box-shadow: 0 0 0 0 rgb(247, 247, 247);
-    -fx-position: absolute;
-    -fx-border-radius: 100%;
-    -fx-left: 0;
-    -fx-top:0;
-    -fx-opacity: 1;
-    -fx-transition: 0s;
+    -fx-border-radius: 2.5px;
+    -fx-border-width: 2.5px;
+    -fx-border-color: rgba(0, 151, 204, 255);
+    -fx-letter-spacing: 20px;
 }
 
+#buttomInicioSpecific:hover {
+    -fx-background-color: rgba(0, 151, 204, 255);
+}
 
-#buttomFavsSpecific{
+#buttomFavsSpecific {
     -fx-background-color: rgb(25, 27, 31);
     -fx-font: 9pt "Arial";
     -fx-font-weight: bold;
-    -fx-border-radius: 20%;
-    -fx-border-width: 2px;
-    -fx-border-color: rgba(0,151,204,255);
-    -fx-letter-spacing:20px
-}
-#buttomFavsSpecific:hover{
-    -fx-background-color: rgba(0,151,204,255);
-}
-#buttomFavsSpecific:after{
-    -fx-top: 1px;
-}
-#buttomFavsSpecific:active:after {
-    -fx-box-shadow: 0 0 0 0 rgb(247, 247, 247);
-    -fx-position: absolute;
-    -fx-border-radius: 100%;
-    -fx-left: 0;
-    -fx-top:0;
-    -fx-opacity: 1;
-    -fx-transition: 0s;
+    -fx-border-radius: 2.5px;
+    -fx-border-width: 2.5px;
+    -fx-border-color: rgba(0, 151, 204, 255);
+    -fx-letter-spacing: 20px
 }
 
-
+#buttomFavsSpecific:hover {
+    -fx-background-color: rgba(0, 151, 204, 255);
+}
