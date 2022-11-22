@@ -16,17 +16,17 @@
          </image>
       </ImageView>
       <ListView fx:id="listViewTitulos" layoutX="227.0" layoutY="124.0" onMouseClicked="#clickListViewTitulos" prefHeight="500.0" prefWidth="835.0" stylesheets="@style.css" />
-      <Button fx:id="buttomFavsSpecific" layoutX="90.0" layoutY="202.0" mnemonicParsing="false" onAction="#clickButtomFavsSpecific" prefHeight="2.0" prefWidth="87.0" stylesheets="@style.css" text="Favoritos" textFill="WHITE">
+      <Button fx:id="buttomFavsSpecific" layoutX="90.0" layoutY="202.0" mnemonicParsing="false" onAction="#clickButtomFavsSpecific" prefHeight="2.0" prefWidth="87.0" style="-fx-background-radius: 50;" stylesheets="@style.css" text="Favoritos" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="buttomInicioSpecific" layoutX="90.0" layoutY="165.0" mnemonicParsing="false" onAction="#clickButtomInicioSpecific" prefHeight="2.0" prefWidth="87.0" stylesheets="@style.css" text="Início" textFill="WHITE">
+      <Button fx:id="buttomInicioSpecific" layoutX="90.0" layoutY="165.0" mnemonicParsing="false" onAction="#clickButtomInicioSpecific" prefHeight="2.0" prefWidth="87.0" style="-fx-background-radius: 50;" stylesheets="@style.css" text="Início" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="searchBar" layoutX="593.0" layoutY="58.0" prefHeight="27.0" prefWidth="305.0" promptText="Digite o nome do filme desejado" />
-      <Button fx:id="searchButton" layoutX="932.0" layoutY="59.0" mnemonicParsing="false" onAction="#search" text="Pesquisar" />
+      <TextField fx:id="searchBar" layoutX="593.0" layoutY="58.0" prefHeight="28.0" prefWidth="305.0" promptText="Digite o nome do filme desejado" />
+      <Button fx:id="searchButton" layoutX="908.0" layoutY="58.0" mnemonicParsing="false" onAction="#search" prefHeight="27.0" prefWidth="101.0" style="-fx-background-radius: 50;" stylesheets="@style.css" text="Pesquisar" textAlignment="CENTER" textFill="WHITE" />
    </children>
 </AnchorPane>

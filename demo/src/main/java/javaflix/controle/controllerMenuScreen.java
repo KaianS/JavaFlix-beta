@@ -87,33 +87,14 @@ public class controllerMenuScreen implements Initializable {
         });
     }
 
-    // public void cadastrarFilme(Titulo titulo){
-
-    // try {
-    // FileOutputStream fileStream = new FileOutputStream("movie.ser", true);
-    // ObjectOutputStream os = new ObjectOutputStream(fileStream);
-    // os.writeObject(titulo);
-    // os.close();
-    // }
-
-    // catch(IOException e) {
-    // System.out.println(e.getMessage());
-    // }
-    // catch(SecurityException e) {
-    // System.out.println(e.getMessage());
-    // }
-    // catch(NullPointerException e) {
-    // System.out.println(e.getMessage());
-    // }
-    // }
-
+    
     public ArrayList<Titulo> listarFilmes() { // Auxiliar Para Pesquisar Filmes
         ArrayList<Titulo> titulos = null;
         try {
             titulos = new ArrayList<Titulo>();
             FileInputStream Titulo = new FileInputStream("movie.ser");
             ObjectInputStream lerObj;
-
+            
             while (Titulo.available() > 0) {
                 lerObj = new ObjectInputStream(Titulo);
                 Titulo d = (Titulo) lerObj.readObject();
@@ -128,12 +109,12 @@ public class controllerMenuScreen implements Initializable {
         }
         return titulos;
     }
-
+    
     public void InicializarFilmes() { // Utilizado para Inicializar Filmes na Primeira
         try {
             FileInputStream Titulo = new FileInputStream("movie.ser");
             ObjectInputStream lerObj;
-
+            
             while (Titulo.available() > 0) {
                 lerObj = new ObjectInputStream(Titulo);
                 Titulo d = (Titulo) lerObj.readObject();
@@ -154,13 +135,13 @@ public class controllerMenuScreen implements Initializable {
         StartJavaFlix.changeScene("specific", titulo);
         return titulo;
     }
-
+    
     @FXML
     void search(ActionEvent event) { // Função Para Busca de Filmes
         listViewTitulos.getItems().clear();
         ArrayList<Titulo> titulos = listarFilmes();
         ArrayList<Titulo> titulosPesquisa = new ArrayList<>();
-
+        
         for (int i = 0; i < titulos.size(); i++) {
             if (titulos.get(i).getNome().toLowerCase().contains(searchBar.getText().toLowerCase())) {
                 titulosPesquisa.add(titulos.get(i));
@@ -169,5 +150,24 @@ public class controllerMenuScreen implements Initializable {
         listViewTitulos.getItems().addAll(titulosPesquisa);
         carregarObListTitulo(0);
     }
-
+    
+    // public void cadastrarFilme(Titulo titulo){
+    
+    // try {
+    // FileOutputStream fileStream = new FileOutputStream("movie.ser", true);
+    // ObjectOutputStream os = new ObjectOutputStream(fileStream);
+    // os.writeObject(titulo);
+    // os.close();
+    // }
+    
+    // catch(IOException e) {
+    // System.out.println(e.getMessage());
+    // }
+    // catch(SecurityException e) {
+    // System.out.println(e.getMessage());
+    // }
+    // catch(NullPointerException e) {
+    // System.out.println(e.getMessage());
+    // }
+    // }
 }

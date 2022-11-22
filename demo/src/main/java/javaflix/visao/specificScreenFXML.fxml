@@ -38,12 +38,12 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="buttomInicioSpecific" layoutX="90.0" layoutY="165.0" mnemonicParsing="false" onAction="#clickButtomInicioSpecific" prefHeight="2.0" prefWidth="87.0" stylesheets="@style.css" text="Início" textFill="WHITE">
+      <Button fx:id="buttomInicioSpecific" layoutX="90.0" layoutY="165.0" mnemonicParsing="false" onAction="#clickButtomInicioSpecific" prefHeight="2.0" prefWidth="87.0" style="-fx-background-radius: 50;" stylesheets="@style.css" text="Início" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="buttomFavsSpecific" layoutX="90.0" layoutY="202.0" mnemonicParsing="false" onAction="#clickButtomFavsSpecific" prefHeight="2.0" prefWidth="87.0" stylesheets="@style.css" text="Favoritos" textFill="WHITE">
+      <Button fx:id="buttomFavsSpecific" layoutX="90.0" layoutY="202.0" mnemonicParsing="false" onAction="#clickButtomFavsSpecific" prefHeight="2.0" prefWidth="87.0" style="-fx-background-radius: 50;" stylesheets="@style.css" text="Favoritos" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
