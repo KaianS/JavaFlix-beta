@@ -74,3 +74,17 @@
 #anchorPaneNoMovie {
 -fx-background-color: rgb(25, 27, 31);
 }
+
+#AddbuttonFavs {
+    -fx-background-color: rgb(25, 27, 31);
+    -fx-font: 10pt "Arial";
+    -fx-font-weight: bold;
+    -fx-border-radius: 20%;
+    -fx-border-width: 2px;
+    -fx-border-color: rgba(0, 151, 204, 255);
+
+}
+
+#AddbuttonFavs:hover {
+    -fx-background-color: rgba(0, 151, 204, 255);
+}

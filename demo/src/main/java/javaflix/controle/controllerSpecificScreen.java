@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 
 public class controllerSpecificScreen implements Initializable{
 
@@ -41,7 +43,16 @@ public class controllerSpecificScreen implements Initializable{
     private Button buttomFavsSpecific;
 
     @FXML
+    private Button AddbuttonFavs;
+
+
+    @FXML
     void clickButtomFavsSpecific(ActionEvent event) {
+
+    }
+
+    @FXML
+    void buttonAddFavs(ActionEvent event) {
 
     }
 
