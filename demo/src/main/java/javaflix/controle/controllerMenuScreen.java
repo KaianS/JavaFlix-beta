@@ -21,6 +21,7 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -161,6 +162,7 @@ public class controllerMenuScreen implements Initializable {
             stage.setScene(new Scene(root));
             stage.setResizable(false);
             stage.show();
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("../visao/Assets/icon.png")));
         }
         listViewTitulos.getItems().addAll(titulosPesquisa);
 

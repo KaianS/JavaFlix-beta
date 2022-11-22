@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class StartJavaFlix extends Application {
@@ -20,7 +21,7 @@ public class StartJavaFlix extends Application {
     public void start(Stage stagePrimary) throws IOException {
         stage = stagePrimary;
         stagePrimary.setTitle("JavaFlix - 2022");
-
+        stagePrimary.getIcons().add(new Image(getClass().getResourceAsStream("Assets/icon.png")));
         Parent fxmlStart = FXMLLoader.load(getClass().getResource("startScreenFXML.fxml"));
         startScene = new Scene(fxmlStart);
 
