@@ -1,4 +1,5 @@
 package javaflix.controle;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -7,15 +8,19 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Observable;
 import java.util.ResourceBundle;
 import javaflix.modelo.Titulo;
 import javaflix.visao.StartJavaFlix;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.util.Callback;
@@ -27,14 +32,19 @@ public class controllerMenuScreen implements Initializable {
 
     @FXML
     private ListView<Titulo> listViewTitulos;
-    
+
     @FXML
     private Button buttomFavsSpecific;
 
     @FXML
     private Button buttomInicioSpecific;
 
-    
+    @FXML
+    private TextField searchBar;
+
+    @FXML
+    private Button searchButton;
+
     @FXML
     void clickButtomFavsSpecific(ActionEvent event) {
 
@@ -45,17 +55,18 @@ public class controllerMenuScreen implements Initializable {
 
     }
 
-    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        carregarObListTitulo();
+        carregarObListTitulo(1);
     }
-    
-    public void carregarObListTitulo(){
-        
-        listarFilmes();
 
-        listViewTitulos.setCellFactory(new Callback<ListView<Titulo>,ListCell<Titulo>>() {
+    public void carregarObListTitulo(int verify) { // Carregamento das Imagens/Lista de Filmes
+
+        if (verify == 1) {
+            InicializarFilmes();
+        }
+
+        listViewTitulos.setCellFactory(new Callback<ListView<Titulo>, ListCell<Titulo>>() {
 
             @Override
             public ListCell<Titulo> call(ListView<Titulo> param) {
@@ -64,58 +75,56 @@ public class controllerMenuScreen implements Initializable {
                     @Override
                     protected void updateItem(Object item, boolean empty) {
                         super.updateItem(item, empty);
-                        Titulo titulo = ((Titulo)item);
+                        Titulo titulo = ((Titulo) item);
 
-                        if(titulo != null){
+                        if (titulo != null) {
                             setText(titulo.getNome());
                             setGraphic(new ImageView(titulo.getImagem()));
                             setTooltip(new Tooltip(titulo.getNome()));
 
                         }
 
-
                     }
                 };
                 return celula;
             }
-            
+
         });
-        
     }
 
-    public void cadastrarFilme(Titulo titulo){
+    // public void cadastrarFilme(Titulo titulo){
 
-        try {
-            FileOutputStream fileStream = new FileOutputStream("movie.ser", true);
-            ObjectOutputStream os = new ObjectOutputStream(fileStream);
-            os.writeObject(titulo);
-            os.close();
-        }
+    // try {
+    // FileOutputStream fileStream = new FileOutputStream("movie.ser", true);
+    // ObjectOutputStream os = new ObjectOutputStream(fileStream);
+    // os.writeObject(titulo);
+    // os.close();
+    // }
 
-        catch(IOException e) {
-            System.out.println(e.getMessage());
-        }
-        catch(SecurityException e) {
-            System.out.println(e.getMessage());
-        }
-        catch(NullPointerException e) {
-            System.out.println(e.getMessage());
-        }
-    }
+    // catch(IOException e) {
+    // System.out.println(e.getMessage());
+    // }
+    // catch(SecurityException e) {
+    // System.out.println(e.getMessage());
+    // }
+    // catch(NullPointerException e) {
+    // System.out.println(e.getMessage());
+    // }
+    // }
 
-    public ArrayList<Titulo> listarFilmes() {
+    public ArrayList<Titulo> listarFilmes() { // Auxiliar Para Pesquisar Filmes
         ArrayList<Titulo> titulos = null;
         try {
             titulos = new ArrayList<Titulo>();
             FileInputStream Titulo = new FileInputStream("movie.ser");
             ObjectInputStream lerObj;
 
-            while(Titulo.available() > 0) {
+            while (Titulo.available() > 0) {
                 lerObj = new ObjectInputStream(Titulo);
-                Titulo d = (Titulo)lerObj.readObject();
-                listViewTitulos.getItems().add(d);
+                Titulo d = (Titulo) lerObj.readObject();
+                titulos.add(d);
             }
-        }catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -125,26 +134,47 @@ public class controllerMenuScreen implements Initializable {
         return titulos;
     }
 
-    public String imprimir() {
-		String res = "";
-		ArrayList<Titulo> disc = listarFilmes();
-		for (int i = 0; i < disc.size(); i++) {
-			res += disc.get(i).imprimir() + "\n---------\n";
-		}
-		return res;
-	}
+    
+    public void InicializarFilmes() { // Utilizado para Inicializar Filmes na Primeira
+        try {
+            FileInputStream Titulo = new FileInputStream("movie.ser");
+            ObjectInputStream lerObj;
+
+            while (Titulo.available() > 0) {
+                lerObj = new ObjectInputStream(Titulo);
+                Titulo d = (Titulo) lerObj.readObject();
+                listViewTitulos.getItems().add(d);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
-    Titulo clickListViewTitulos() {
+    Titulo clickListViewTitulos() { // Mudança Tela Específica
         Titulo titulo = listViewTitulos.getSelectionModel().getSelectedItem();
-        System.out.println("Título Selecionado pelo mouse" + titulo);
         StartJavaFlix.changeScene("specific", titulo);
         return titulo;
-
     }
-    
 
+    @FXML
+    void search(ActionEvent event) { // Função Para Busca de Filmes
+        listViewTitulos.getItems().clear();
+        ArrayList<Titulo> titulos = listarFilmes();
+        ArrayList<Titulo> titulosPesquisa = new ArrayList<>();
 
-
+        for (int i = 0; i < titulos.size(); i++) {
+            System.out.println("ENTROU NO FOR");
+            if (titulos.get(i).getNome().toLowerCase().contains(searchBar.getText().toLowerCase())) {
+                titulosPesquisa.add(titulos.get(i));
+            }
+        }
+        listViewTitulos.getItems().addAll(titulosPesquisa);
+        carregarObListTitulo(0);
+    }
 
 }

@@ -29,6 +29,7 @@ public class Titulo implements Serializable {
     public String getImagem() {
         return imagem;
     }
+
     public int getCodigo() {
         return codigo;
     }
