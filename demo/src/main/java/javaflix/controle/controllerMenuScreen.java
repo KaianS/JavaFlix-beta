@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.lang.Thread.State;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -11,13 +12,18 @@ import javaflix.modelo.Titulo;
 import javaflix.visao.StartJavaFlix;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 public class controllerMenuScreen implements Initializable {
@@ -137,7 +143,7 @@ public class controllerMenuScreen implements Initializable {
     }
     
     @FXML
-    void search(ActionEvent event) { // Função Para Busca de Filmes
+    void search(ActionEvent event) throws IOException { // Função Para Busca de Filmes
         listViewTitulos.getItems().clear();
         ArrayList<Titulo> titulos = listarFilmes();
         ArrayList<Titulo> titulosPesquisa = new ArrayList<>();
@@ -147,7 +153,17 @@ public class controllerMenuScreen implements Initializable {
                 titulosPesquisa.add(titulos.get(i));
             }
         }
+
+        if (titulosPesquisa.isEmpty()){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../visao/noMovieFXML.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+        }
         listViewTitulos.getItems().addAll(titulosPesquisa);
+
         carregarObListTitulo(0);
     }
     
