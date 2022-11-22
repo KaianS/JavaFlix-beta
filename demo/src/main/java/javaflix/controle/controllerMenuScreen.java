@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.lang.Thread.State;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -24,7 +23,6 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 public class controllerMenuScreen implements Initializable {
@@ -164,6 +162,7 @@ public class controllerMenuScreen implements Initializable {
             stage.show();
             stage.getIcons().add(new Image(getClass().getResourceAsStream("../visao/Assets/icon.png")));
         }
+
         listViewTitulos.getItems().addAll(titulosPesquisa);
 
         carregarObListTitulo(0);

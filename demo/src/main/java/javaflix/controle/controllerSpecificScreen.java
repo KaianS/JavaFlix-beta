@@ -58,7 +58,6 @@ public class controllerSpecificScreen implements Initializable{
             @Override
             public void onScreenChanged(String newScreen, Titulo userData) {
                 if (newScreen.equals("specific")){
-                    System.out.println("Nova tela " + newScreen + " Dados " + userData);
                     labelTitle.setText(userData.getNome());
                     imagemFilme.setImage(new Image(userData.getImagem()));
                     if (userData.getSinopse().isEmpty()){
