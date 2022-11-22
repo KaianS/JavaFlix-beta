@@ -3,6 +3,8 @@ package javaflix.controle;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javax.swing.Action;
+
 import javaflix.modelo.Titulo;
 import javaflix.visao.StartJavaFlix;
 import javafx.event.ActionEvent;
@@ -45,23 +47,24 @@ public class controllerSpecificScreen implements Initializable{
     @FXML
     private Button AddbuttonFavs;
 
-
     @FXML
     void clickButtomFavsSpecific(ActionEvent event) {
-
     }
 
     @FXML
     void buttonAddFavs(ActionEvent event) {
+            AddbuttonFavs.setStyle("-fx-background-color: #0097cc");
+    }
 
+    @FXML
+    void removeFav(ActionEvent event){
+        AddbuttonFavs.setStyle("-fx-background-color: #191b1f");
     }
 
     @FXML
     void clickButtomInicioSpecific(ActionEvent event) {
         StartJavaFlix.changeScene("menu");
     }
-
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -87,7 +90,6 @@ public class controllerSpecificScreen implements Initializable{
                     labelNota.setText(notaConvertida);
                     labelGen.setText(genero);
                     labelLancamento.setText(userData.getLancamento());
-
                 }
             }
         });
