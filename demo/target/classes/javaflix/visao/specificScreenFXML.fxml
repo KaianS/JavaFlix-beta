@@ -48,11 +48,6 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="AddbuttonFavs" layoutX="340.0" layoutY="37.0" mnemonicParsing="false" onAction="#buttonAddFavs" prefHeight="28.0" prefWidth="126.0" style="-fx-background-radius: 50;" stylesheets="@style.css" text="Favoritar Filme" textFill="WHITE" />
-      <Button fx:id="removeFavButton" layoutX="497.0" layoutY="37.0" mnemonicParsing="false" onAction="#removeFav" prefHeight="2.0" prefWidth="87.0" style="-fx-background-radius: 50;" stylesheets="@style.css" text="Remover" textFill="WHITE">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Button>
+      <Button fx:id="AddbuttonFavs" layoutX="320.0" layoutY="40.0" mnemonicParsing="false" onAction="#buttonAddFavs" prefHeight="28.0" prefWidth="165.0" style="-fx-background-radius: 50;" stylesheets="@style.css" text="Favoritar Filme" textFill="WHITE" />
    </children>
 </AnchorPane>

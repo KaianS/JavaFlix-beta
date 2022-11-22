@@ -1,25 +1,32 @@
 package javaflix.controle;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import javax.swing.Action;
 
 import javaflix.modelo.Titulo;
 import javaflix.visao.StartJavaFlix;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+
 
 public class controllerSpecificScreen implements Initializable{
 
-    
+    Titulo t;
+    ArrayList<Titulo> titulosFav = new ArrayList<>();
+
+
     @FXML
     private Button buttomInicioSpecific;
 
@@ -49,17 +56,53 @@ public class controllerSpecificScreen implements Initializable{
 
     @FXML
     void clickButtomFavsSpecific(ActionEvent event) {
+        for (int i=0; i < titulosFav.size(); i++){  
+            System.out.println(titulosFav.get(i).getNome());
+        }
     }
 
     @FXML
-    void buttonAddFavs(ActionEvent event) {
-            AddbuttonFavs.setStyle("-fx-background-color: #0097cc");
+    void buttonAddFavs(ActionEvent event) throws IOException {
+        int aux=1;
+        if(titulosFav.size() > 0){
+            for (int i=0; i < titulosFav.size(); i++){
+                if(titulosFav.get(i).getNome() == t.getNome()){
+                    titulosFav.remove(i);
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../visao/removedFavsFXML.fxml"));
+                    Parent root = loader.load();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root));
+                    stage.setResizable(false);
+                    stage.show();
+                    stage.getIcons().add(new Image(getClass().getResourceAsStream("../visao/Assets/icon.png")));
+                    aux=0;
+                    break;
+                }
+            }
+        }
+        else{
+            titulosFav.add(t);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../visao/addFavsFXML.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("../visao/Assets/icon.png")));
+            aux=0;
+        }
+        if (aux == 1 && titulosFav.size() > 0){
+            titulosFav.add(t);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../visao/addFavsFXML.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("../visao/Assets/icon.png")));
+        }
     }
 
-    @FXML
-    void removeFav(ActionEvent event){
-        AddbuttonFavs.setStyle("-fx-background-color: #191b1f");
-    }
 
     @FXML
     void clickButtomInicioSpecific(ActionEvent event) {
@@ -72,6 +115,7 @@ public class controllerSpecificScreen implements Initializable{
             @Override
             public void onScreenChanged(String newScreen, Titulo userData) {
                 if (newScreen.equals("specific")){
+                    t = userData;
                     labelTitle.setText(userData.getNome());
                     imagemFilme.setImage(new Image(userData.getImagem()));
                     if (userData.getSinopse().isEmpty()){

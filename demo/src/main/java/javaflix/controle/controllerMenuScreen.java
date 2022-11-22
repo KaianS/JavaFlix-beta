@@ -66,7 +66,7 @@ public class controllerMenuScreen implements Initializable {
             InicializarFilmes();
         }
 
-        listViewTitulos.setCellFactory(new Callback<ListView<Titulo>, ListCell<Titulo>>() {
+        listViewTitulos.setCellFactory(new Callback<ListView<Titulo>, ListCell<Titulo>>() { // Carregamento da ListView
 
             @Override
             public ListCell<Titulo> call(ListView<Titulo> param) {
@@ -115,7 +115,7 @@ public class controllerMenuScreen implements Initializable {
         return titulos;
     }
     
-    public void InicializarFilmes() { // Utilizado para Inicializar Filmes na Primeira
+    public void InicializarFilmes() { // Utilizado para Inicializar Filmes na Primeira Chamada
         try {
             FileInputStream Titulo = new FileInputStream("movie.ser");
             ObjectInputStream lerObj;
@@ -125,7 +125,9 @@ public class controllerMenuScreen implements Initializable {
                 Titulo d = (Titulo) lerObj.readObject();
                 listViewTitulos.getItems().add(d);
             }
-        } catch (FileNotFoundException e) {
+        } 
+        
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
