@@ -2,18 +2,13 @@ package javaflix.controle;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Observable;
 import java.util.ResourceBundle;
 import javaflix.modelo.Titulo;
 import javaflix.visao.StartJavaFlix;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -134,7 +129,6 @@ public class controllerMenuScreen implements Initializable {
         return titulos;
     }
 
-    
     public void InicializarFilmes() { // Utilizado para Inicializar Filmes na Primeira
         try {
             FileInputStream Titulo = new FileInputStream("movie.ser");
@@ -168,7 +162,6 @@ public class controllerMenuScreen implements Initializable {
         ArrayList<Titulo> titulosPesquisa = new ArrayList<>();
 
         for (int i = 0; i < titulos.size(); i++) {
-            System.out.println("ENTROU NO FOR");
             if (titulos.get(i).getNome().toLowerCase().contains(searchBar.getText().toLowerCase())) {
                 titulosPesquisa.add(titulos.get(i));
             }
