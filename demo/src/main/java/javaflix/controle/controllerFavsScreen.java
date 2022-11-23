@@ -55,11 +55,13 @@ public class controllerFavsScreen implements Initializable {
             @Override
             public void onScreenChanged(String newScreen, Titulo x, ArrayList<Titulo> arrayAdd) {
                 if (newScreen.equals("favs")){
-                        titulos.clear();
+                        titulos.clear(); // Auxiliar Pesquisa
+                        aux.clear();
                         aux.addAll(arrayAdd);
                         listViewFavs.getItems().clear();
                         listViewFavs.getItems().addAll(arrayAdd);
-                        titulos.addAll(arrayAdd);
+
+                        titulos.addAll(arrayAdd); // Auxiliar Pesquisa
                 }
             }
         });
