@@ -55,9 +55,11 @@ public class controllerFavsScreen implements Initializable {
             @Override
             public void onScreenChanged(String newScreen, Titulo x, ArrayList<Titulo> arrayAdd) {
                 if (newScreen.equals("favs")){
+                        titulos.clear();
                         aux.addAll(arrayAdd);
                         listViewFavs.getItems().clear();
                         listViewFavs.getItems().addAll(arrayAdd);
+                        titulos.addAll(arrayAdd);
                 }
             }
         });
@@ -111,7 +113,6 @@ public class controllerFavsScreen implements Initializable {
             stage.show();
             stage.getIcons().add(new Image(getClass().getResourceAsStream("../visao/Assets/icon.png")));
         }
-
         listViewFavs.getItems().addAll(titulosPesquisa);
         carregarObListFavs();
     }
