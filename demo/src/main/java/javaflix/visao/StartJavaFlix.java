@@ -51,7 +51,7 @@ public class StartJavaFlix extends Application {
                 break;
             case "menu":
                 stage.setScene(menuScene);
-                notifyAllListeners("menu", userData, null);
+                notifyAllListeners("menu", userData, arrayT);
                 break;
             case "specific":
                 stage.setScene(specificScene);

@@ -104,7 +104,7 @@ public class controllerSpecificScreen implements Initializable{
 
     @FXML
     void clickButtomInicioSpecific(ActionEvent event) {
-        StartJavaFlix.changeScene("menu");
+        StartJavaFlix.changeScene("menu", null, titulosFav);
     }
 
     @Override

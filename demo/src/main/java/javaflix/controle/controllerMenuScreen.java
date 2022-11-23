@@ -48,7 +48,7 @@ public class controllerMenuScreen implements Initializable {
 
     @FXML
     void clickButtomFavsSpecific(ActionEvent event) {
-        StartJavaFlix.changeScene("favs", null, null);
+        StartJavaFlix.changeScene("favs", null, titulosFav);
     }
 
     @FXML
@@ -58,8 +58,18 @@ public class controllerMenuScreen implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        StartJavaFlix.addOnChangeScreenListener(new StartJavaFlix.onChangeScreen() {
+            @Override
+            public void onScreenChanged(String newScreen, Titulo userData, ArrayList<Titulo> B) {
+                if (newScreen.equals("menu")){
+                    if(B != null){
+                        titulosFav.addAll(B);
+                    }
+                }
+            }
+        });
         carregarObListTitulo(1);
-
+        
     }
 
 

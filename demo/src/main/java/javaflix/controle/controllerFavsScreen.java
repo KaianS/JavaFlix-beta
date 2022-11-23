@@ -44,7 +44,7 @@ public class controllerFavsScreen implements Initializable {
 
     @FXML
     void clickButtomInicioSpecific(ActionEvent event) {
-        StartJavaFlix.changeScene("menu");
+        StartJavaFlix.changeScene("menu", null, aux);
     }
 
 
@@ -54,10 +54,9 @@ public class controllerFavsScreen implements Initializable {
             @Override
             public void onScreenChanged(String newScreen, Titulo x, ArrayList<Titulo> arrayAdd) {
                 if (newScreen.equals("favs")){
-                    if(arrayAdd.isEmpty()==false){
+                        aux.addAll(arrayAdd);
                         listViewFavs.getItems().clear();
-                    }
-                    listViewFavs.getItems().addAll(arrayAdd);
+                        listViewFavs.getItems().addAll(arrayAdd);
                 }
             }
         });
