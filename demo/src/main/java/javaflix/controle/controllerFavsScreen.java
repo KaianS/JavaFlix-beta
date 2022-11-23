@@ -53,15 +53,9 @@ public class controllerFavsScreen implements Initializable {
         StartJavaFlix.addOnChangeScreenListener(new StartJavaFlix.onChangeScreen() {
             @Override
             public void onScreenChanged(String newScreen, Titulo f, ArrayList<Titulo> userData) {
+                listViewFavs.getItems().clear();
                 if (newScreen.equals("favs")){
-                    for (int i=0; i < userData.size(); i++){
-                        if(userData.get(i).getNome() != aux.get(i).getNome()){
-                            aux.add(userData.get(i));
-                            titulos.add(userData.get(i)); 
-                        }
-                        
-                    }
-                    listViewFavs.getItems().addAll(aux);
+                    listViewFavs.getItems().addAll(userData);
                 }
             }
         });
