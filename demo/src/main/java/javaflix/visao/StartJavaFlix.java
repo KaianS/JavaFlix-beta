@@ -14,6 +14,8 @@ import javafx.stage.Stage;
 public class StartJavaFlix extends Application {
     private static Stage stage;
     private static Scene startScene;
+    private static Scene loginScreen;
+    private static Scene cadastroScreen;
     private static Scene menuScene;
     private static Scene specificScene;
     private static Scene favsScene;
@@ -27,6 +29,12 @@ public class StartJavaFlix extends Application {
 
         Parent fxmlStart = FXMLLoader.load(getClass().getResource("startScreenFXML.fxml"));
         startScene = new Scene(fxmlStart);
+        
+        Parent fxmlLogin = FXMLLoader.load(getClass().getResource("loginScreenFXML.fxml"));
+        loginScreen= new Scene (fxmlLogin);
+        
+        Parent fxmlCadastro = FXMLLoader.load(getClass().getResource("cadastroScreenFXML.fxml"));
+        cadastroScreen= new Scene (fxmlCadastro);
 
         Parent fxmlMenu = FXMLLoader.load(getClass().getResource("MenuScreenFXML.fxml"));
         menuScene = new Scene(fxmlMenu);
@@ -48,6 +56,18 @@ public class StartJavaFlix extends Application {
             case "start":
                 stage.setScene(startScene);
                 notifyAllListeners("main", userData, null);
+                break;
+            case "login":
+                stage.setScene(loginScreen);
+                notifyAllListeners("login", userData, null);
+                break;
+            case "cadastre-se":
+                stage.setScene(cadastroScreen);
+                notifyAllListeners("cadastre-se", userData, null);
+                break;
+            case "cadastrar":
+                stage.setScene(loginScreen);
+                notifyAllListeners("cadastrar", userData, null);
                 break;
             case "menu":
                 stage.setScene(menuScene);

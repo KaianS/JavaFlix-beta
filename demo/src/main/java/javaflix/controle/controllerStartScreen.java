@@ -15,6 +15,6 @@ public class controllerStartScreen {
 
     @FXML
     void clickButtonStart(ActionEvent event) {
-        StartJavaFlix.changeScene("menu");
+        StartJavaFlix.changeScene("login");
     }
 }

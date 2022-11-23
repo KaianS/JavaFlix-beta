@@ -18,6 +18,54 @@
 #botaoIniciar:hover {
     -fx-background-color: rgba(0, 151, 204, 255);
 }
+#login {
+    -fx-background-color: rgb(25, 27, 31);
+    -fx-font: 14pt "Arial";
+    -fx-font-weight: bold;
+    -fx-border-radius: 20%;
+    -fx-border-width: 2px;
+    -fx-border-color: rgba(0, 151, 204, 255);
+}
+
+#login:hover {
+    -fx-background-color: rgba(0, 151, 204, 255);
+}
+#voltar {
+    -fx-background-color: rgb(25, 27, 31);
+    -fx-font: 14pt "Arial";
+    -fx-font-weight: bold;
+    -fx-border-radius: 20%;
+    -fx-border-width: 2px;
+    -fx-border-color: rgba(0, 151, 204, 255);
+}
+
+#voltar:hover {
+    -fx-background-color: rgba(0, 151, 204, 255);
+}
+#cadastre {
+    -fx-background-color: rgb(25, 27, 31);
+    -fx-font: 14pt "Arial";
+    -fx-font-weight: bold;
+    -fx-border-radius: 20%;
+    -fx-border-width: 2px;
+    -fx-border-color: rgba(0, 151, 204, 255);
+}
+
+#cadastre:hover {
+    -fx-background-color: rgba(0, 151, 204, 255);
+}
+#cadastrar {
+    -fx-background-color: rgb(25, 27, 31);
+    -fx-font: 14pt "Arial";
+    -fx-font-weight: bold;
+    -fx-border-radius: 20%;
+    -fx-border-width: 2px;
+    -fx-border-color: rgba(0, 151, 204, 255);
+}
+
+#cadastrar:hover {
+    -fx-background-color: rgba(0, 151, 204, 255);
+}
 
 #buttomInicioSpecific {
     -fx-background-color: rgb(25, 27, 31);
