@@ -45,6 +45,7 @@ public class controllerFavsScreen implements Initializable {
     @FXML
     void clickButtomInicioSpecific(ActionEvent event) {
         StartJavaFlix.changeScene("menu", null, aux);
+        aux.clear();
     }
 
 
