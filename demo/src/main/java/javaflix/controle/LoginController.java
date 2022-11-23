@@ -1,4 +1,5 @@
 package javaflix.controle;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javaflix.data.*;
@@ -6,9 +7,14 @@ import javaflix.modelo.User;
 import javaflix.visao.StartJavaFlix;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
 
 public class LoginController {
     @FXML
@@ -28,7 +34,7 @@ public class LoginController {
 
     UserData UD = new UserData();
     @FXML
-    void clickButtonStart(ActionEvent event) {
+    void clickButtonStart(ActionEvent event) throws IOException {
         ArrayList<User> userAAA = new ArrayList<>();
         
         String user=userName.getText();
@@ -43,6 +49,13 @@ public class LoginController {
         }
         if(aux==false){
             System.out.println("nao foi");
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../visao/sucessoLoginFXML.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setResizable(false);
+            stage.show();
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("../visao/Assets/icon.png")));
         }else{
             System.out.println("foi");
             StartJavaFlix.changeScene("menu");
