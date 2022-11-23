@@ -27,6 +27,7 @@ import javafx.util.Callback;
 
 public class controllerMenuScreen implements Initializable {
 
+    ArrayList<Titulo> titulosFav = new ArrayList<>();
     @FXML
     private ImageView menuBackground;
 
@@ -47,7 +48,7 @@ public class controllerMenuScreen implements Initializable {
 
     @FXML
     void clickButtomFavsSpecific(ActionEvent event) {
-
+        StartJavaFlix.changeScene("favs", null, null);
     }
 
     @FXML
@@ -58,7 +59,9 @@ public class controllerMenuScreen implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         carregarObListTitulo(1);
+
     }
+
 
     public void carregarObListTitulo(int verify) { // Carregamento das Imagens/Lista de Filmes
 
@@ -139,7 +142,7 @@ public class controllerMenuScreen implements Initializable {
     @FXML
     Titulo clickListViewTitulos() { // Mudança Tela Específica
         Titulo titulo = listViewTitulos.getSelectionModel().getSelectedItem();
-        StartJavaFlix.changeScene("specific", titulo);
+        StartJavaFlix.changeScene("specific", titulo, null);
         return titulo;
     }
     

@@ -16,12 +16,15 @@ public class StartJavaFlix extends Application {
     private static Scene startScene;
     private static Scene menuScene;
     private static Scene specificScene;
+    private static Scene favsScene;
 
     @Override
     public void start(Stage stagePrimary) throws IOException {
         stage = stagePrimary;
         stagePrimary.setTitle("JavaFlix - 2022");
         stagePrimary.getIcons().add(new Image(getClass().getResourceAsStream("Assets/icon.png")));
+
+
         Parent fxmlStart = FXMLLoader.load(getClass().getResource("startScreenFXML.fxml"));
         startScene = new Scene(fxmlStart);
 
@@ -32,30 +35,37 @@ public class StartJavaFlix extends Application {
         Parent fxmlSpecific = FXMLLoader.load(getClass().getResource("specificScreenFXML.fxml"));
         specificScene = new Scene(fxmlSpecific);
 
+        Parent fxmlFavs = FXMLLoader.load(getClass().getResource("favsScreenFXML.fxml"));
+        favsScene = new Scene(fxmlFavs);
+
         stagePrimary.setScene(startScene);
         stagePrimary.setResizable(false);
         stagePrimary.show();
     }
 
-    public static void changeScene(String scr, Titulo userData) {
+    public static void changeScene(String scr, Titulo userData, ArrayList<Titulo> arrayT) {
         switch (scr) {
             case "start":
                 stage.setScene(startScene);
-                notifyAllListeners("main", userData);
+                notifyAllListeners("main", userData, null);
                 break;
             case "menu":
                 stage.setScene(menuScene);
-                notifyAllListeners("menu", userData);
+                notifyAllListeners("menu", userData, null);
                 break;
             case "specific":
                 stage.setScene(specificScene);
-                notifyAllListeners("specific", userData);
+                notifyAllListeners("specific", userData, null);
+                break;
+                case "favs":
+                stage.setScene(favsScene);
+                notifyAllListeners("favs", null, arrayT);
                 break;
         }
     }
 
     public static void changeScene(String scr) {
-        changeScene(scr, null);
+        changeScene(scr,null, null);
     }
 
     public static void main(String[] args) {
@@ -65,16 +75,16 @@ public class StartJavaFlix extends Application {
     private static ArrayList<onChangeScreen> listeners = new ArrayList<>();
 
     public static interface onChangeScreen {
-        void onScreenChanged(String newScreen, Titulo userData);
+        void onScreenChanged(String newScreen, Titulo userData, ArrayList<Titulo> arrayT);
     }
 
     public static void addOnChangeScreenListener(onChangeScreen newListener) {
         listeners.add(newListener);
     }
 
-    public static void notifyAllListeners(String newScreen, Titulo userData) {
+    public static void notifyAllListeners(String newScreen, Titulo userData, ArrayList<Titulo> arrayT) {
         for (onChangeScreen l : listeners)
-            l.onScreenChanged(newScreen, userData);
+            l.onScreenChanged(newScreen, userData, arrayT);
     }
 
 }

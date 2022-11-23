@@ -56,9 +56,7 @@ public class controllerSpecificScreen implements Initializable{
 
     @FXML
     void clickButtomFavsSpecific(ActionEvent event) {
-        for (int i=0; i < titulosFav.size(); i++){  
-            System.out.println(titulosFav.get(i).getNome());
-        }
+        StartJavaFlix.changeScene("favs", null, titulosFav);
     }
 
     @FXML
@@ -113,7 +111,7 @@ public class controllerSpecificScreen implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         StartJavaFlix.addOnChangeScreenListener(new StartJavaFlix.onChangeScreen() {
             @Override
-            public void onScreenChanged(String newScreen, Titulo userData) {
+            public void onScreenChanged(String newScreen, Titulo userData, ArrayList<Titulo> B) {
                 if (newScreen.equals("specific")){
                     t = userData;
                     labelTitle.setText(userData.getNome());
